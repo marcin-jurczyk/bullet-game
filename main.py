@@ -2,7 +2,7 @@ import sys
 import pygame
 import config
 
-from entities.player.player import Player
+from entities.player import Player
 
 
 def main():
