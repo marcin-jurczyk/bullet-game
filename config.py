@@ -19,6 +19,8 @@ PLAYER_START_SIZE = 15
 PLAYER_MIN_SIZE = 8
 PLAYER_START_HEALTH = 100
 PLAYER_START_SPEED = 250
+PLAYER_MIN_SPEED = 50
+PLAYER_MAX_SPEED = 600
 PLAYER_COLOR = (255, 255, 255)
 
 # Range (px) for bullet target offset
@@ -85,14 +87,14 @@ MAX_ENLARGE_EFFECTS = 3
 # ==================================================
 # EFFECTS – SLOW
 # ==================================================
-DECREASE_SPEED_EFFECT = 40
+DECREASE_SPEED_VALUE = 200
 DECREASE_SPEED_TIME = 5.0
 MAX_DECREASE_SPEED_EFFECTS = 2
 
 # ==================================================
 # EFFECTS – SPEED (POWER UP)
 # ==================================================
-SPEED_POWERUP_VALUE = 60
+SPEED_POWERUP_VALUE = 300
 SPEED_POWERUP_TIME = 5.0
 
 # ==================================================
@@ -104,11 +106,14 @@ SHIELD_POWERUP_TIME = 6.0
 # ==================================================
 # EFFECTS – SHRINK
 # ==================================================
-SHRINK_POWERUP_SIZE = 4
+SHRINK_POWERUP_SIZE = 5
 SHRINK_POWERUP_TIME = 6.0
 
 # ==================================================
 # POWER UPS – GENERAL
 # ==================================================
 HEALTH_POWERUP_VALUE = 25
-POWERUP_LIFETIME = 8.0
+POWERUP_LIFETIME = 15.0
+POWERUP_SIZE = 50
+POWERUP_COLOR_POSITIVE = (0,255,0)
+POWERUP_COLOR_NEGATIVE = (255,0,0)

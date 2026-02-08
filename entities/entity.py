@@ -1,4 +1,6 @@
+from __future__ import annotations
 import pygame
+
 
 class Entity:
     def __init__(self, position, size, color):
@@ -12,15 +14,13 @@ class Entity:
 
     def draw(self, surface: pygame.Surface):
         pygame.draw.circle(surface, self.color, self.position, self.size)
-    
-    def check_collision(self, other: "Entity") -> bool:
-        distance = self.position.distance_to(other.position)
-        return distance <= self.size + other.size
-    
-    def on_collision(self, other: "Entity"):
+
+    def check_collision(self, other: Entity) -> bool:
+        radius_sum = self.size + other.size
+        return (
+            self.position.distance_squared_to(other.position)
+            <= radius_sum * radius_sum
+    )
+
+    def on_collision(self, other: Entity):
         pass
-
-    
-    
-
-                                   

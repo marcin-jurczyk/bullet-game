@@ -1,6 +1,7 @@
 import pygame
 import config
 
+from effects.effects_manager import EffectManager
 from entities.entity import Entity
 
 
@@ -16,12 +17,19 @@ class Player(Entity):
 
         self.health = config.PLAYER_START_HEALTH
         self.speed = config.PLAYER_START_SPEED
-
+        self.effect_manager = EffectManager(self)
         self.is_dead = False
+
+    def add_effect(self, effect):
+        self.effect_manager.add(effect)
+
+    def remove_effect(self, effect_type):
+        self.effect_manager.remove_by_type(effect_type)
 
     def update(self, dt: float):
         self.handle_input(dt)
         self.clamp_to_board()
+        self.effect_manager.update(dt)
 
     def handle_input(self, dt: float):
         keys = pygame.key.get_pressed()
@@ -42,11 +50,11 @@ class Player(Entity):
         self.position += direction * self.speed * dt
 
     def clamp_to_board(self):
-        self.position.x = max(
+        self.position.x = max( # type: ignore
             self.size,
-            min(config.BOARD_WIDTH - self.size, self.position.x)
+            min(config.BOARD_WIDTH - self.size, self.position.x) # type: ignore
         )
-        self.position.y = max(
+        self.position.y = max( # type: ignore
             self.size,
-            min(config.BOARD_HEIGHT - self.size, self.position.y)
+            min(config.BOARD_HEIGHT - self.size, self.position.y) # type: ignore
         )
