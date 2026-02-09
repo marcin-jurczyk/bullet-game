@@ -1,6 +1,5 @@
 import pygame
 import config
-
 from effects.effects_manager import EffectManager
 from entities.entity import Entity
 
@@ -50,11 +49,10 @@ class Player(Entity):
         self.position += direction * self.speed * dt
 
     def clamp_to_board(self):
-        self.position.x = max( # type: ignore
-            self.size,
-            min(config.BOARD_WIDTH - self.size, self.position.x) # type: ignore
-        )
-        self.position.y = max( # type: ignore
-            self.size,
-            min(config.BOARD_HEIGHT - self.size, self.position.y) # type: ignore
-        )
+        min_x = float(self.size)
+        max_x = float(config.BOARD_WIDTH - self.size)
+        min_y = float(self.size)
+        max_y = float(config.BOARD_HEIGHT - self.size)
+
+        self.position.x = max(min_x, min(max_x, self.position.x))
+        self.position.y = max(min_y, min(max_y, self.position.y))

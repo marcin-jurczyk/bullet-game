@@ -29,8 +29,9 @@ PLAYER_OFFSET_RANGE = 50
 # ==================================================
 # BULLET – GENERAL
 # ==================================================
-BULLET_TARGET_PLAYER_CHANCE = 0.75
+BULLET_TARGET_PLAYER_CHANCE = 0.5
 BULLET_TURN_RATE_DEFAULT = 0.0
+BULLET_SPAWN_INTERVAL = 0.3
 
 # ==================================================
 # NORMAL BULLET
@@ -39,7 +40,7 @@ NORMAL_BULLET_SIZE = 8
 NORMAL_BULLET_SPEED = 300
 NORMAL_BULLET_DAMAGE = 0.20
 NORMAL_BULLET_TRAIL_LENGTH = 20
-NORMAL_BULLET_COLOR = (255, 255, 255)
+NORMAL_BULLET_COLOR = (255, 255, 200)
 
 # ==================================================
 # LIGHT BULLET
@@ -114,6 +115,7 @@ SHRINK_POWERUP_TIME = 6.0
 # ==================================================
 HEALTH_POWERUP_VALUE = 25
 POWERUP_LIFETIME = 15.0
-POWERUP_SIZE = 50
+POWERUP_SIZE = 25
 POWERUP_COLOR_POSITIVE = (0,255,0)
 POWERUP_COLOR_NEGATIVE = (255,0,0)
+POWERUP_SPAWN_INTERVAL = 3.0

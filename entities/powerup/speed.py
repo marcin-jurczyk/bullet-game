@@ -1,3 +1,4 @@
+from core.resource_manager import ResourceManager
 from effects.slow import SlowEffect
 from entities.powerup.powerup import PowerUp
 from effects.speed import SpeedEffect
@@ -5,6 +6,8 @@ from config import POWERUP_COLOR_POSITIVE
 
 
 class SpeedPowerUp(PowerUp):
+    ICON_PATH = 'assets/icons/speed.png'
+
     def __init__(self, position, color=POWERUP_COLOR_POSITIVE):
         super().__init__(position, color=color)
 

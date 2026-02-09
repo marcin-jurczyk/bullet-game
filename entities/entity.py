@@ -3,6 +3,7 @@ import pygame
 
 
 class Entity:
+    position: pygame.math.Vector2  # type hint for mypy
     def __init__(self, position, size, color):
         self.position = pygame.math.Vector2(position)
         self.size = size
