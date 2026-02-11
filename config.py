@@ -24,14 +24,14 @@ PLAYER_MAX_SPEED = 600
 PLAYER_COLOR = (255, 255, 255)
 
 # Range (px) for bullet target offset
-PLAYER_OFFSET_RANGE = 50
+PLAYER_OFFSET_RANGE = 30
 
 # ==================================================
 # BULLET – GENERAL
 # ==================================================
 BULLET_TARGET_PLAYER_CHANCE = 0.5
-BULLET_TURN_RATE_DEFAULT = 0.0
-BULLET_SPAWN_INTERVAL = 0.3
+BULLET_TURN_RATE = 0.1
+BULLET_SPAWN_INTERVAL = 0.2
 
 # ==================================================
 # NORMAL BULLET
