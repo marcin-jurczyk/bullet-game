@@ -1,11 +1,15 @@
 import random
 import config
 from pygame import Vector2
+from entities.bullet.enlarge import EnlargeBullet
+from entities.bullet.hard import HardBullet
+from entities.bullet.light import LightBullet
 from entities.bullet.normal import NormalBullet
 from entities.bullet.slow import SlowBullet
 
+
 class BulletFactory:
-    BULLET_TYPES = [NormalBullet, SlowBullet]
+    BULLET_TYPES = [NormalBullet, SlowBullet, EnlargeBullet, HardBullet, LightBullet]
 
     @staticmethod
     def point_on_edge(edge, w, h):

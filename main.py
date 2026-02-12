@@ -5,7 +5,7 @@ import config
 from entities.player.base import Player
 from factories.powerup_factory import PowerUpFactory
 from factories.bullet_factory import BulletFactory
-from utils.debug_ui import draw_debug_footer
+from utils.debug_ui import draw_debug_panel
 
 
 def main():
@@ -91,7 +91,7 @@ def main():
         for b in bullets:
             b.draw(screen)
 
-        draw_debug_footer(screen, player, powerups, bullets, font)
+        draw_debug_panel(screen, player, powerups, bullets, font)
 
         pygame.display.flip()
 

@@ -1,7 +1,11 @@
 from effects.base import Effect
 from config import SHRINK_POWERUP_TIME, SHRINK_POWERUP_SIZE
 
+
 class ShrinkEffect(Effect):
+    key = "shrink"
+    removes = ["enlarge"]
+
     def __init__(self):
         super().__init__(duration=SHRINK_POWERUP_TIME, value=SHRINK_POWERUP_SIZE)
 

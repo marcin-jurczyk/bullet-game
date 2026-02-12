@@ -4,6 +4,9 @@ class EffectManager:
         self.active_effects = []
 
     def add(self, effect):
+        for key in effect.removes:
+            self.remove_by_key(key)
+
         existing = next(
             (e for e in self.active_effects if isinstance(e, type(effect))),
             None,
@@ -15,11 +18,11 @@ class EffectManager:
             effect.on_apply(self.player)
             self.active_effects.append(effect)
 
-    def remove_by_type(self, effect_type):
+    def remove_by_key(self, key):
         remaining = []
 
         for effect in self.active_effects:
-            if isinstance(effect, effect_type):
+            if effect.key == key:
                 effect.on_expire(self.player)
             else:
                 remaining.append(effect)

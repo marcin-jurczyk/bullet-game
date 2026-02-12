@@ -1,6 +1,10 @@
 from abc import ABC, abstractmethod
+from typing import Optional
 
 class Effect(ABC):
+    key: Optional[str] = None
+    removes: list[str] = []
+
     def __init__(self, duration: float, value: float):
         self.duration = duration
         self.remaining_time = duration

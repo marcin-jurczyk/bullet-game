@@ -73,7 +73,7 @@ ENLARGE_BULLET_COLOR = (255, 220, 0)
 # SLOW BULLET
 # ==================================================
 SLOW_BULLET_SIZE = 10
-SLOW_BULLET_SPEED = 260
+SLOW_BULLET_SPEED = 250
 SLOW_BULLET_DAMAGE = 0.10
 SLOW_BULLET_TRAIL_LENGTH = 20
 SLOW_BULLET_COLOR = (80, 255, 120)
@@ -88,7 +88,7 @@ MAX_ENLARGE_EFFECTS = 3
 # ==================================================
 # EFFECTS – SLOW
 # ==================================================
-DECREASE_SPEED_VALUE = 200
+DECREASE_SPEED_VALUE = 100
 DECREASE_SPEED_TIME = 5.0
 MAX_DECREASE_SPEED_EFFECTS = 2
 

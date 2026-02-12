@@ -9,7 +9,7 @@ from config import POWERUP_SIZE, BOARD_HEIGHT, BOARD_WIDTH
 
 
 class PowerUpFactory:
-    POWERUP_CLASSES = [SpeedPowerUp, SlowPowerUp, ShrinkPowerUp, EnlargePowerUp]
+    POWERUP_CLASSES = [SpeedPowerUp, SlowPowerUp, ShrinkPowerUp]
 
     @staticmethod
     def create_random(player=None, existing_powerups=None, max_attempts=1):

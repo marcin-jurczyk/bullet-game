@@ -8,7 +8,7 @@ class EnlargePowerUp(PowerUp):
         super().__init__(position, color=color)
 
     def apply(self, player):
-        player.remove_effect(ShrinkEffect)
+        # player.remove_effect(ShrinkEffect)
         player.add_effect(EnlargeEffect())
         self.expire()
 

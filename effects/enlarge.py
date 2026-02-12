@@ -1,8 +1,11 @@
-from config import ENLARGE_OFFSET, ENLARGE_TIME
 from effects.base import Effect
+from config import ENLARGE_OFFSET, ENLARGE_TIME
 
 
 class EnlargeEffect(Effect):
+    key = "enlarge"
+    removes = ["shrink"]
+
     def __init__(self):
         super().__init__(duration=ENLARGE_TIME, value=ENLARGE_OFFSET)
 

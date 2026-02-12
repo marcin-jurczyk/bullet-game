@@ -25,4 +25,3 @@ class NormalBullet(Bullet):
             color=config.NORMAL_BULLET_COLOR,
             effect=None,
         )
-

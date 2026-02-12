@@ -22,8 +22,8 @@ class Player(Entity):
     def add_effect(self, effect):
         self.effect_manager.add(effect)
 
-    def remove_effect(self, effect_type):
-        self.effect_manager.remove_by_type(effect_type)
+    def remove_effect(self, effect_key: str):
+        self.effect_manager.remove_by_key(effect_key)
 
     def update(self, dt: float):
         self.handle_input(dt)

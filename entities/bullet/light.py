@@ -1,11 +1,10 @@
 import pygame
 import config
-from effects.slow import SlowEffect
 from entities.bullet.bullet import Bullet
 from entities.bullet.bullet_movement import BulletMovement
 
 
-class SlowBullet(Bullet):
+class LightBullet(Bullet):
     def __init__(
         self,
         position: pygame.Vector2,
@@ -13,7 +12,7 @@ class SlowBullet(Bullet):
     ):
         movement = BulletMovement(
             position=position,
-            speed=config.SLOW_BULLET_SPEED,
+            speed=config.LIGHT_BULLET_SPEED,
             target_position=initial_target,
             turn_rate=config.BULLET_TURN_RATE,
         )
@@ -21,8 +20,8 @@ class SlowBullet(Bullet):
         super().__init__(
             position=position,
             movement=movement,
-            damage=config.SLOW_BULLET_DAMAGE,
-            size=config.SLOW_BULLET_SIZE,
-            color=config.SLOW_BULLET_COLOR,
-            effect=SlowEffect()
+            damage=config.LIGHT_BULLET_DAMAGE,
+            size=config.LIGHT_BULLET_SIZE,
+            color=config.LIGHT_BULLET_COLOR,
+            effect=None,
         )
