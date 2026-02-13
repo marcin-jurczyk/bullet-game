@@ -4,6 +4,8 @@ from entities.powerup.powerup import PowerUp
 
 
 class ShrinkPowerUp(PowerUp):
+    ICON_PATH = 'assets/icons/shrink.png'
+
     def __init__(self, position, color=(255, 255, 0)):
         super().__init__(position, color=color)
 

@@ -4,6 +4,8 @@ from entities.powerup.powerup import PowerUp
 
 
 class EnlargePowerUp(PowerUp):
+    ICON_PATH = 'assets/icons/enlarge.png'
+
     def __init__(self, position, color=(0, 255, 255)):
         super().__init__(position, color=color)
 

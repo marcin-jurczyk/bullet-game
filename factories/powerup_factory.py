@@ -2,6 +2,8 @@ import random
 
 import pygame
 from entities.powerup.enlarge import EnlargePowerUp
+from entities.powerup.heal import HealPowerUp
+from entities.powerup.shield import ShieldPowerUp
 from entities.powerup.shrink import ShrinkPowerUp
 from entities.powerup.slow import SlowPowerUp
 from entities.powerup.speed import SpeedPowerUp
@@ -9,7 +11,7 @@ from config import POWERUP_SIZE, BOARD_HEIGHT, BOARD_WIDTH
 
 
 class PowerUpFactory:
-    POWERUP_CLASSES = [SpeedPowerUp, SlowPowerUp, ShrinkPowerUp]
+    POWERUP_CLASSES = [SpeedPowerUp, SlowPowerUp, ShrinkPowerUp, ShieldPowerUp]
 
     @staticmethod
     def create_random(player=None, existing_powerups=None, max_attempts=1):

@@ -42,3 +42,7 @@ class EffectManager:
                 remaining.append(effect)
 
         self.active_effects = remaining
+
+    def draw(self, surface):
+        for effect in self.active_effects:
+            effect.draw(surface, self.player)

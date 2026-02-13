@@ -24,3 +24,6 @@ class Effect(ABC):
 
     def refresh(self):
         self.remaining_time = self.duration
+
+    def draw(self, surface, player):
+        pass

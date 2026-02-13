@@ -16,11 +16,16 @@ class Player(Entity):
 
         self.health = config.PLAYER_START_HEALTH
         self.speed = config.PLAYER_START_SPEED
+        self.has_shield = False
         self.effect_manager = EffectManager(self)
         self.is_dead = False
 
     def add_effect(self, effect):
         self.effect_manager.add(effect)
+
+    def draw(self, surface):
+        super().draw(surface)
+        self.effect_manager.draw(surface)
 
     def remove_effect(self, effect_key: str):
         self.effect_manager.remove_by_key(effect_key)

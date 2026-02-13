@@ -102,13 +102,18 @@ SPEED_POWERUP_TIME = 5.0
 # EFFECTS – SHIELD
 # ==================================================
 SHIELD_RADIUS_OFFSET = 30
-SHIELD_POWERUP_TIME = 6.0
+SHIELD_POWERUP_TIME = 10.0
 
 # ==================================================
 # EFFECTS – SHRINK
 # ==================================================
 SHRINK_POWERUP_SIZE = 5
 SHRINK_POWERUP_TIME = 6.0
+
+# ==================================================
+# EFFECTS – HEAL
+# ==================================================
+HEAL_POWERUP_VALUE = 5
 
 # ==================================================
 # POWER UPS – GENERAL
