@@ -37,40 +37,21 @@ class PowerUp(Entity):
             surface.blit(g, g.get_rect(center=center), special_flags=pygame.BLEND_RGBA_ADD)
 
 
-    def draw(self, surface: Surface):
+    def draw(self, surface: pygame.Surface):
         x, y = int(self.position.x), int(self.position.y)
 
         # --- glow ---
-        outer_radius = self.size + 12
-        inner_radius = self.size - 12
-        max_alpha    = 50
-
-        glow_surf = pygame.Surface(surface.get_size(), pygame.SRCALPHA)
-
-        # ---- OUTER GLOW ----
-        outer_steps = outer_radius - self.size
-        for i, r in enumerate(range(self.size, outer_radius)):
-            t = i / outer_steps
-            alpha = int(max_alpha * (1 - t) ** 2)
-            gfxdraw.aacircle(glow_surf, x, y, r, (*self.color[:3], alpha))
-
-        # ---- INNER GLOW ----
-        inner_steps = self.size - inner_radius
-        for i, r in enumerate(range(self.size, inner_radius, -1)):
-            t = i / inner_steps
-            alpha = int(max_alpha * (1 - t) ** 2)
-            gfxdraw.aacircle(glow_surf, x, y, r, (*self.color[:3], alpha))
-
-        # ---- ADDITIVE BLEND ----
-        surface.blit(glow_surf, (0, 0), special_flags=pygame.BLEND_RGBA_ADD)
+        # glow_surf = ResourceManager.glow_circle((*self.color[:3], 50), self.size)
+        # surface.blit(glow_surf, glow_surf.get_rect(center=(x, y)), special_flags=pygame.BLEND_RGBA_ADD)
 
         # --- main circle ---
         gfxdraw.aacircle(surface, x, y, self.size, self.color)
 
+        # --- icon ---
         if self.ICON_PATH is not None:
-            icon_surf = ResourceManager.scaled_image(self.ICON_PATH, self.size * 2)
-            icon_rect = icon_surf.get_rect(center=(x, y))
-            surface.blit(icon_surf, icon_rect)
+            icon_surf = ResourceManager.scaled_image(self.ICON_PATH, self.size*2)
+            surface.blit(icon_surf, icon_surf.get_rect(center=(x, y)))
+
 
     def apply(self, player):
         pass
